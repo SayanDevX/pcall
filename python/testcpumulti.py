@@ -1,13 +1,15 @@
 #My Desktop i5 12400 finished in
-# real -> 1m41.008s
+# real -> 1 minute 41 secs
 
+#Macbook Air M5 Finished in ->
+# real -> 31 secs
 
 # CachyOs Finished In ->
 # real -> 72.85 secs
 
 
 # M4 Macbook Air finishes in 
-# real -> 42s
+# real -> 42 secs
 
 #command to run is -> time python hello.py 16000 >/dev/null (only for linux or bash or wsl)
 
