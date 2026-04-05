@@ -1,4 +1,3 @@
-key = True
 sum = 0
 count = 0
 

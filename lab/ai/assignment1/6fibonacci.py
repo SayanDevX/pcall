@@ -1,8 +1,10 @@
-num = int(input("Enter A Number: "))
+n = int(input("Enter A Number: "))
 
-for i in num:
-    if i == 0 or i == 1:
-        fib = 1
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        print(a, end=" ")
+        a, b = b, a + b
 
-def fib:
+fibonacci(n)
 

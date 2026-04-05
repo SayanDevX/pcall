@@ -6,7 +6,7 @@ Assignment 1 ->
 2. Write a python program to find remainder when a number is divided by z. 
 3. Check the type of the variable assigned using input () function.
 4. Use comparison operator to find out whether a given variable 'a' is greater than 'b' or not. Take a=34, b=80.
-5. Write a python program to find the average of two numbers entered by the users.
+5. Write a python program to find the f of two numbers entered by the users.
 6. Write a python program to calculate square of a number entered by the user.
 
 
@@ -32,3 +32,22 @@ Assignment 3
 	2 2
 	1
 
+
+Assignment 4 ->
+0. Write a Python program to find factorial using while loop.
+1. Write a Python program to print Fibonacci series.
+2. Write a Python Program to check the Armstrong or not. 
+3. Write a Python program to print Odd numbers and Even numbers from 1 to 50 using for loop.
+4. Write a Python program to reverse a number using loop.
+5. Write a Python program to demonstrate break and continue statements.
+6. Write a python program to check the number is super or not.
+
+
+Assignment 5 ->
+0. Count Even and Odd Numbers in a Tuple.
+1. Find Maximum and Minimum without built-in Tuple.
+2. Write a Code to Reverse a Tuple.
+3. Write a Code to Check if Element is Exists or not.
+4. Write a code to analysis the Student Marks.(average)
+5. Write a code to find Second Largest Element in Tuple.
+6. Write a Codeto sort the values in Tuple.(Mannual Sorting)
