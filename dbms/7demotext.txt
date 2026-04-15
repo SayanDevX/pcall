@@ -1,0 +1,170 @@
+1.BASIC BLOCK
+--------------------------------------------------
+DECLARE
+message varchar2(20):= 'Hello, World!';
+BEGIN
+dbms_output.put_line(message);
+END;
+
+--------------------------------------------------
+
+2.ADDITION OF 2 NUMBER
+
+DECLARE
+  n1 number;
+  n2 number;
+  n3 number ;
+BEGIN
+  n1:=:Enter_n1;
+  n2:=:Enter_n2;
+  n3:= n1+n2;
+  dbms_output.put_line('Addition is:' || n3);
+END;
+
+---------------------------------------------------
+
+3.MAXIMUM BETWEEN TWO NUMBER
+DECLARE
+  X NUMBER;
+  Y NUMBER;
+BEGIN
+  X:=:X;  
+  Y:=:Y;
+  IF(X>Y)
+  THEN
+     DBMS_OUTPUT.PUT_LINE(X||' IS > '||Y);
+  ELSIF(X=Y)
+  THEN
+     DBMS_OUTPUT.PUT_LINE(X||' IS = '||Y);
+  ELSE
+     DBMS_OUTPUT.PUT_LINE(X||' IS < '||Y);
+  END IF;
+END;
+
+
+----------------------------------------------------
+
+4.SWICH CASE TO CALCULATE OPERATION
+
+DECLARE
+   Operation char(1);
+   x number;
+   y number;
+BEGIN
+   operation:=:operation;
+   x:=:x;
+   y:=:y;
+ CASE operation
+    when'+' then dbms_output.put_line(x+y);
+    when'-' then dbms_output.put_line(x-y);
+    when'*' then dbms_output.put_line(x*y);
+    when'/' then dbms_output.put_line(x/y);
+    else    dbms_output.put_line('invalid choice');
+END CASE;
+END;
+
+
+--------------------------------------------------------
+
+
+5.7. 1 TO N USING LOOP
+
+DECLARE
+   I NUMBER;
+   N NUMBER;
+BEGIN
+   I:=1;
+   N:=:N;
+   LOOP
+        DBMS_OUTPUT.PUT_LINE(I);
+        I:=I+1;
+        EXIT WHEN (I>N);
+   END LOOP;
+END;
+
+------------------------------------------------------
+
+6.7. 1 TO N USING WHILE LOOP
+
+DECLARE
+   I NUMBER;
+   N NUMBER;
+BEGIN
+   I:=1;
+   N:=:N;
+   WHILE(I<=N)
+   LOOP
+        DBMS_OUTPUT.PUT_LINE(I);
+        I:=I+1;
+       
+   END LOOP;
+END;
+
+------------------------------------------------
+
+7. 1 TO N USING FOR LOOP
+
+DECLARE
+   I NUMBER;
+   N NUMBER;
+BEGIN
+   N:=:N;
+   FOR I IN 1..N
+   LOOP
+        DBMS_OUTPUT.PUT_LINE(I);    
+   END LOOP;
+END;
+
+-------------------------------------------------
+
+7. CHECK PRIME NUMBER
+
+DECLARE
+   I NUMBER;
+   N NUMBER;
+   F NUMBER;
+BEGIN
+   F:=0;
+   N:=:N;
+   FOR I IN 1..N
+   LOOP
+        IF(MOD(N,I)=0)
+        THEN
+             F:=F+1;
+        END IF;
+   END LOOP;
+   IF(F=2)
+   THEN
+     DBMS_OUTPUT.PUT_LINE(N||' IS PRIME NUMBER');
+   ELSE
+     DBMS_OUTPUT.PUT_LINE(N||' IS NOT PRIME NUMBER');
+   END IF;
+END;
+
+------------------------------------------------------
+
+
+8.FETCH RECORD COLUMN WISE FROM TABLE
+
+DECLARE
+ ID VARCHAR2(20);
+ NAME VARCHAR2(20);
+ CITY VARCHAR2(20);
+ SAL NUMBER;
+ DOB DATE;
+BEGIN
+  SELECT EID,ENAME,CITY,SALARY,DOB INTO ID,NAME,CITY,SAL,DOB FROM EMP WHERE EID='E02';
+  DBMS_OUTPUT.PUT_LINE('ID: '||ID||chr(10)||'NAME: '||NAME||chr(10)||'SALARY: '||SAL||chr(10)||'CITY: '||CITY||chr(10)||'DOB: '||DOB);
+END;
+
+-----------------------------------------------------
+
+9.FETCH RECORD ROW WISE FROM TABLE
+
+DECLARE
+ EMP_REC EMPLOYEE%ROWTYPE;
+ STR VARCHAR2(50);
+BEGIN
+  SELECT * INTO EMP_REC FROM EMPLOYEE WHERE EID='E3';
+  DBMS_OUTPUT.PUT_LINE('ID: '||EMP_REC.EID||chr(10)||'NAME: '||EMP_REC.ENAME||chr(10)||'SALARY: '||EMP_REC.SALARY||chr(10)||'CITY: '||EMP_REC.CITY||chr(10)||'DOB: '||EMP_REC.DOB);
+END;

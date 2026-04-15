@@ -1,0 +1,621 @@
+SQL> SELECT * FROM EMPLOYEE;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+E4    ANIL             8000 MUMBAI          12-JAN-20
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+
+6 rows selected.
+
+SQL>
+SQL> SELECT * FROM EMPLOYEE WHERE CITY='KOLKATA';
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+
+SQL> SELECT * FROM EMPLOYEE WHERE CITY='KOLKATA' OR CITY='PUNE';
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E3    SUJAY            7000 PUNE            18-FEB-05
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+
+SQL> SELECT * FROM EMPLOYEE WHERE CITY='KOLKATA' OR CITY='PUNE' OR CITY='DELHI';
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+
+SQL> SELECT * FROM EMPLOYEE WHERE CITY IN('KOLKATA','PUNE');
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E3    SUJAY            7000 PUNE            18-FEB-05
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+
+SQL> SELECT * FROM EMPLOYEE WHERE CITY IN('KOLKATA','PUNE','DELHI');
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+
+SQL> SELECT * FROM EMPLOYEE WHERE CITY != 'KOLKATA';
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+E4    ANIL             8000 MUMBAI          12-JAN-20
+
+SQL> SELECT * FROM EMPLOYEE WHERE CITY <> 'KOLKATA';
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+E4    ANIL             8000 MUMBAI          12-JAN-20
+
+SQL> SELECT * FROM EMPLOYEE WHERE CITY <> 'KOLKATA' CITY <> 'PUNE';
+SELECT * FROM EMPLOYEE WHERE CITY <> 'KOLKATA' CITY <> 'PUNE'
+                                               *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> SELECT * FROM EMPLOYEE WHERE CITY <> 'KOLKATA' OR CITY <> 'PUNE';
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+E4    ANIL             8000 MUMBAI          12-JAN-20
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+
+6 rows selected.
+
+SQL> SELECT * FROM EMPLOYEE WHERE CITY <> 'KOLKATA' AND CITY <> 'PUNE';
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E2    BIJAY            7200 DELHI           19-MAR-95
+E4    ANIL             8000 MUMBAI          12-JAN-20
+
+SQL> SELECT * FROM EMPLOYEE WHERE CITY NOT IN('KOLKATA','PUNE');
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E2    BIJAY            7200 DELHI           19-MAR-95
+E4    ANIL             8000 MUMBAI          12-JAN-20
+
+SQL> SELECT * FROM EMPLOYEE WHERE SALARY>5000
+  2  ;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+E4    ANIL             8000 MUMBAI          12-JAN-20
+
+SQL> SELECT * FROM EMPLOYEE WHERE SALARY>5000 AND SALARY<8000;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+
+SQL> SELECT * FROM EMPLOYEE WHERE SALARY>=5000 AND SALARY<=8000;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+E4    ANIL             8000 MUMBAI          12-JAN-20
+
+SQL> SELECT * FROM EMPLOYEE WHERE SALARY BETWEEN 5000 AND 8000;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+E4    ANIL             8000 MUMBAI          12-JAN-20
+
+SQL> SELECT * FROM EMPLOYEE;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+E4    ANIL             8000 MUMBAI          12-JAN-20
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+
+6 rows selected.
+
+SQL> SELECT * FROM EMPLOYEE ORDER BY SALARY;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E3    SUJAY            7000 PUNE            18-FEB-05
+E2    BIJAY            7200 DELHI           19-MAR-95
+E4    ANIL             8000 MUMBAI          12-JAN-20
+
+6 rows selected.
+
+SQL> SELECT * FROM EMPLOYEE ORDER BY SALARY ASC;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E3    SUJAY            7000 PUNE            18-FEB-05
+E2    BIJAY            7200 DELHI           19-MAR-95
+E4    ANIL             8000 MUMBAI          12-JAN-20
+
+6 rows selected.
+
+SQL> SELECT * FROM EMPLOYEE ORDER BY SALARY DESC;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E4    ANIL             8000 MUMBAI          12-JAN-20
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+
+6 rows selected.
+
+SQL> SELECT * FROM EMPLOYEE ORDER BY SALARY;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E3    SUJAY            7000 PUNE            18-FEB-05
+E2    BIJAY            7200 DELHI           19-MAR-95
+E4    ANIL             8000 MUMBAI          12-JAN-20
+
+6 rows selected.
+
+SQL> SELECT * FROM EMPLOYEE ORDER BY SALARY,ENAME;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E6    AJAY             2000 KOLKATA         10-FEB-05
+E5    ROY              2000 KOLKATA         10-FEB-05
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E3    SUJAY            7000 PUNE            18-FEB-05
+E2    BIJAY            7200 DELHI           19-MAR-95
+E4    ANIL             8000 MUMBAI          12-JAN-20
+
+6 rows selected.
+
+SQL> SELECT * FROM EMPLOYEE ORDER BY SALARY,ENAME DESC;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E3    SUJAY            7000 PUNE            18-FEB-05
+E2    BIJAY            7200 DELHI           19-MAR-95
+E4    ANIL             8000 MUMBAI          12-JAN-20
+
+6 rows selected.
+
+SQL> SELECT * FROM EMPLOYEE ORDER BY SALARY DESC,ENAME DESC;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E4    ANIL             8000 MUMBAI          12-JAN-20
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+
+6 rows selected.
+
+SQL> SELECT * FROM EMPLOYEE WHERE ENAME LIKE ENAME 'A%';
+SELECT * FROM EMPLOYEE WHERE ENAME LIKE ENAME 'A%'
+                                              *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> SELECT * FROM EMPLOYEE WHERE ENAME LIKE 'A%';
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E4    ANIL             8000 MUMBAI          12-JAN-20
+E6    AJAY             2000 KOLKATA         10-FEB-05
+
+SQL> SELECT * FROM EMPLOYEE WHERE ENAME LIKE '%L';
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E4    ANIL             8000 MUMBAI          12-JAN-20
+
+SQL> SELECT * FROM EMPLOYEE WHERE ENAME LIKE '%A%';
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+E4    ANIL             8000 MUMBAI          12-JAN-20
+E6    AJAY             2000 KOLKATA         10-FEB-05
+
+SQL> SELECT * FROM EMPLOYEE WHERE ENAME LIKE '%A%' AND ENAME NOT LIKE 'A%';
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+
+SQL> SELECT * FROM EMPLOYEE WHERE ENAME LIKE '__I%';
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E4    ANIL             8000 MUMBAI          12-JAN-20
+
+SQL> SELECT * FROM EMPLOYEE ;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+E4    ANIL             8000 MUMBAI          12-JAN-20
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+
+6 rows selected.
+
+SQL> SELECT * FROM EMPLOYEE WHERE ENAME LIKE '%O_';
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E5    ROY              2000 KOLKATA         10-FEB-05
+
+SQL> SELECT SYSDATE FROM DUAL;
+
+SYSDATE
+---------
+27-JAN-26
+
+SQL> SELECT EXTRACT (DAY FROM SYSDATE) FROM DUAL;
+
+EXTRACT(DAYFROMSYSDATE)
+-----------------------
+                     27
+
+SQL> SELECT EXTRACT (MONTH FROM SYSDATE) FROM DUAL;
+
+EXTRACT(MONTHFROMSYSDATE)
+-------------------------
+                        1
+
+SQL> SELECT EXTRACT (YEAR FROM SYSDATE) FROM DUAL;
+
+EXTRACT(YEARFROMSYSDATE)
+------------------------
+                    2026
+
+SQL> SELECT * FROM EMPLOYEE ;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+E4    ANIL             8000 MUMBAI          12-JAN-20
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+
+6 rows selected.
+
+SQL> SELECT * FROM EMPLOYEE WHERE EXTRACT(MONTH FORM DOB)=3;
+SELECT * FROM EMPLOYEE WHERE EXTRACT(MONTH FORM DOB)=3
+                                           *
+ERROR at line 1:
+ORA-00907: missing right parenthesis
+
+
+SQL> SELECT * FROM EMPLOYEE WHERE EXTRACT(MONTH FROM DOB)=3;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E2    BIJAY            7200 DELHI           19-MAR-95
+
+SQL> SELECT * FROM EMPLOYEE WHERE EXTRACT(YEAR FROM DOB)=2005;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E3    SUJAY            7000 PUNE            18-FEB-05
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+
+SQL> SELECT SQRT(100) FROM DUAL;
+
+ SQRT(100)
+----------
+        10
+
+SQL> SELECT POWER(10,2) FROM DUAL;
+
+POWER(10,2)
+-----------
+        100
+
+SQL> SELECT CEIL(105.456) FROM DUAL;
+
+CEIL(105.456)
+-------------
+          106
+
+SQL> SELECT CEIL(105.1) FROM DUAL;
+
+CEIL(105.1)
+-----------
+        106
+
+SQL> SELECT FLOOR(105.1) FROM DUAL;
+
+FLOOR(105.1)
+------------
+         105
+
+SQL> SELECT FLOOR(105.9) FROM DUAL;
+
+FLOOR(105.9)
+------------
+         105
+
+SQL> SELECT ROUND(105.92344,2) FROM DUAL;
+
+ROUND(105.92344,2)
+------------------
+            105.92
+
+SQL> SELECT ABS(-345) FROM DUAL;
+
+ ABS(-345)
+----------
+       345
+
+SQL> SELECT LENTH('HELLO') FROM DUAL;
+SELECT LENTH('HELLO') FROM DUAL
+       *
+ERROR at line 1:
+ORA-00904: "LENTH": invalid identifier
+
+
+SQL> SELECT LENGTH('HELLO') FROM DUAL;
+
+LENGTH('HELLO')
+---------------
+              5
+
+SQL> SELECT CONCAT('HELLO','WORLD') FROM DUAL;
+
+CONCAT('HE
+----------
+HELLOWORLD
+
+SQL> SELECT CONCAT('HELLO',' WORLD') FROM DUAL;
+
+CONCAT('HEL
+-----------
+HELLO WORLD
+
+SQL> SELECT ('       HELLO WORLD    ') FROM DUAL;
+
+('HELLOWORLD')
+----------------------
+       HELLO WORLD
+
+SQL> SELECT TRIM('       HELLO WORLD    ') FROM DUAL;
+
+TRIM('HELLO
+-----------
+HELLO WORLD
+
+SQL> SELECT TRIM('       HELLO    WORLD    ') FROM DUAL;
+
+TRIM('HELLOWOR
+--------------
+HELLO    WORLD
+
+SQL> SELECT REPLACE('HELLO','L','K') FROM DUAL;
+
+REPLA
+-----
+HEKKO
+
+SQL> SELECT SUBSTR('HELLO WORLD',2) FROM DUAL;
+
+SUBSTR('HE
+----------
+ELLO WORLD
+
+SQL> SELECT SUBSTR('HELLO WORLD',2,6) FROM DUAL;
+
+SUBSTR
+------
+ELLO W
+
+SQL> SELECT ASCCI('A') FROM DUAL;
+SELECT ASCCI('A') FROM DUAL
+       *
+ERROR at line 1:
+ORA-00904: "ASCCI": invalid identifier
+
+
+SQL> SELECT ASCII('A') FROM DUAL;
+
+ASCII('A')
+----------
+        65
+
+SQL> SELECT * FROM EMPLOYEE;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+E4    ANIL             8000 MUMBAI          12-JAN-20
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+
+6 rows selected.
+
+SQL> SELECT MAX(SALARY)\ FROM EMPLOYEE;
+SELECT MAX(SALARY)\ FROM EMPLOYEE
+                  *
+ERROR at line 1:
+ORA-00911: invalid character
+
+
+SQL> SELECT MAX(SALARY) FROM EMPLOYEE;
+
+MAX(SALARY)
+-----------
+       8000
+
+SQL> SELECT MIN(SALARY) FROM EMPLOYEE;
+
+MIN(SALARY)
+-----------
+       2000
+
+SQL> SELECT SUM(SALARY) FROM EMPLOYEE;
+
+SUM(SALARY)
+-----------
+      31200
+
+SQL> SELECT AVG(SALARY) FROM EMPLOYEE;
+
+AVG(SALARY)
+-----------
+       5200
+
+SQL> SELECT * FROM EMPLOYEE;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+E4    ANIL             8000 MUMBAI          12-JAN-20
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+
+6 rows selected.
+
+SQL> SELECT COUNT(EID) FROM EMPLOYEE;
+
+COUNT(EID)
+----------
+         6
+
+SQL> SELECT COUNT(*) FROM EMPLOYEE;
+
+  COUNT(*)
+----------
+         6
+
+SQL> SELECT MAX(SALARY) FROM EMPLOYEE;
+
+MAX(SALARY)
+-----------
+       8000
+
+SQL> SELECT MAX(SALARY) AS "MAXIMUM SALARY" FROM EMPLOYEE;
+
+MAXIMUM SALARY
+--------------
+          8000
+
+SQL> SELECT MAX(SALARY) FROM EMPLOYEE;
+
+MAX(SALARY)
+-----------
+       8000
+
+SQL> SELECT * FROM EMPLOYEE;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E1    AJAY             5000 KOLKATA         12-JAN-98
+E2    BIJAY            7200 DELHI           19-MAR-95
+E3    SUJAY            7000 PUNE            18-FEB-05
+E4    ANIL             8000 MUMBAI          12-JAN-20
+E5    ROY              2000 KOLKATA         10-FEB-05
+E6    AJAY             2000 KOLKATA         10-FEB-05
+
+6 rows selected.
+
+SQL> SELECT * FROM EMPLOYEE WHERE SALARY=8000;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E4    ANIL             8000 MUMBAI          12-JAN-20
+
+SQL> SELECT * FROM EMPLOYEE WHERE SALARY=MAX(SALARY);
+SELECT * FROM EMPLOYEE WHERE SALARY=MAX(SALARY)
+                                    *
+ERROR at line 1:
+ORA-00934: group function is not allowed here
+
+
+SQL> SELECT MAX(SALARY) FROM EMPLOYEE;
+
+MAX(SALARY)
+-----------
+       8000
+
+SQL> SELECT * FROM EMPLOYEE WHERE SALARY=8000;
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E4    ANIL             8000 MUMBAI          12-JAN-20
+
+SQL> SELECT * FROM EMPLOYEE WHERE SALARY=(SELECT MAX(SALARY) FROM EMPLOYEE);
+
+EID   ENAME          SALARY CITY            DOB
+----- ---------- ---------- --------------- ---------
+E4    ANIL             8000 MUMBAI          12-JAN-20
