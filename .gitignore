@@ -1,2 +1,6 @@
 gui/venv/
 .vscode/
+*.mp4
+*.jpg
+*.jpeg
+*.png

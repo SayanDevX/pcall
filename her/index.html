@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Her</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cake.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <!-- Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Space+Grotesk:wght@300..700&display=swap"
+        rel="stylesheet">
+    <!-- Sekuya -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sekuya&display=swap" rel="stylesheet">
+    <!-- Libre Baskerville -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="parent_div">
+        <button class="start_btn" onclick="nextText()">Click Here</button>
+
+        <div class="text_div">
+            <p class="text_step">Happy Birthday Pineapple</p>
+            <p class="text_step">In This Special Occasion</p>
+            <p class="text_step">I've Made Something For You</p>
+        </div>
+
+        <button class="second_btn" onclick="nextImg()">Start?</button>
+
+        <div class="memory_div">
+            <p class="memory_line1">BTW</p>
+            <p class="memory_line2">Do You Remember This...?</p>
+        </div>
+
+        <div class="first_date">
+            <img class="her2" src="media/first_date/her.jpg">
+            <img class="tea" src="media/first_date/tea.jpg">
+            <img class="sunflower" src="media/first_date/sunflower.jpg">
+            <img class="both" src="media/first_date/both.jpg">
+        </div>
+
+        <p class="swipe_hint">Swipe Up?</p>
+
+        <video class="dog" loop playsinline preload="auto" src="media/first_date/her_dog_optimized.mp4"></video>
+
+        <p class="again_hint">Swipe Again?</p>
+
+        <div class="outro_div">
+            <p class="outro_step">Or These...?</p>
+        </div>
+
+        <div class="funny_pics">
+            <img class="forehead" src="media/funny_pics/forehead.jpg">
+            <img class="close" src="media/funny_pics/close.jpg">
+            <img class="saraswati" src="media/funny_pics/saraswati.jpg">
+            <img class="night_mustache" src="media/funny_pics/night_mustache.jpg">
+            <img class="teeth_2" src="media/funny_pics/teeth_2.jpg">
+            <img class="sec_day" src="media/funny_pics/sec_day.jpg">
+            <img class="ew" src="media/funny_pics/ew.jpg">
+            <img class="close_2" src="media/funny_pics/close2.jpg">
+            <img class="mustache" src="media/funny_pics/mustache.jpg">
+            <img class="eye" src="media/funny_pics/eye.jpg">
+            <img class="passport" src="media/funny_pics/passport.jpg">
+            <img class="teeth" src="media/funny_pics/teeth.jpg">
+        </div>
+
+        <p class="sorry_hint">Sorry Sorry Sorry, Not These....</p>
+
+        <div class="meant_div">
+            <p class="meant_step">Hehehueuheh Sorry Couldn't Resist</p>
+            <p class="meant_step2">Swipe Again?</p>
+            <p class="meant_step3">You Might Like This&lt;3</p>
+        </div>
+
+        <img class="collage_1" src="media/collage.png">
+        <p class="c_swipe1">Babu Swipe Up?</p>
+        <img class="collage_2" src="media/collage2.png">
+        <p class="c_swipe2">Babu Swipe?</p>
+
+        <div class="final_screen">
+            <p class="happy">Happy Birthday Sona</p>
+            <p class="final_text">Happy birthday. I don’t think I say this much, but thank you so much for being in my
+                life, you make everything 10 times better. You have a quiet way of bringing comfort and sexiness without
+                even trying too hard, and I freaking love that. I hope this year will be better than any year ever was.
+                You deserve all the love the universe can give to someone, you are the best and bestest girlfriend ever,
+                and for that I’ve made this small offering to my divine entity. May you are the happiest in this year
+                and throughout your life, I love you and I’ll do until death does us apart.
+            </p>
+        </div>
+        <div class="last_order">
+            <p class="forgot">Oh I Almost Forgot</p>
+            <p class="order">I Ordered Something For You</p>
+            <p class="delivery">It Should've Arrived By Now</p>
+            <p class="waiting">Waiting...</p>
+        </div>
+    </div>
+    <div class="cake-scene">
+        <div class="cake-container">
+            <div class="cake" id="cake">
+                <div class="green-candle" id="candle1" style="top:10px;left:14px"></div>
+                <div class="purple-candle" id="candle2" style="top:10px;left:20px"></div>
+                <div class="yellow-candle" id="candle3" style="top:10px;left:26px"></div>
+                <div class="blue-candle" id="candle4" style="top:10px;left:32px"></div>
+                <div class="green-candle" id="candle5" style="top:10px;left:38px"></div>
+                <div class="purple-candle" id="candle6" style="top:13px;left:17px"></div>
+            </div>
+        </div>
+    </div>
+    <div class="cake-hb-overlay">
+        <p class="cake-hb-text">Happy Birthday Surjomukhi!</p>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

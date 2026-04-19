@@ -48,15 +48,7 @@ INSERT INTO Member_219 VALUES(8, 'Arpita Roy', 'Kolkata', '31-JULY-11', 'Half-Ye
 
 SELECT * FROM Member_219;
 
-INSERT INTO Books_219 VALUES(101, 'Let Us C', 'Denis Ritchie', 450, 'Others');
-INSERT INTO Books_219 VALUES(102, 'Oracle-Complete Ref', 'Loni', 550, 'Database');
-INSERT INTO Books_219 VALUES(103, 'Visual Basic 10', 'BPB', 700, 'Others');
-INSERT INTO Books_219 VALUES(104, 'Mastering SQL', 'Loni', 450, 'Database');
-INSERT INTO Books_219 VALUES(105, 'PL SQL-Ref', 'Scott Urman', 750, 'Database');
-INSERT INTO Books_219 VALUES(106, 'UNIX', 'Sumitava Das', 300, 'System');
-INSERT INTO Books_219 VALUES(107, 'Optics', 'Ghatak', 600, 'Science');
-INSERT INTO Books_219 VALUES(108, 'Data Structure', 'G.S. Baluja', 350, 'Others');
-
+3
 SELECT * FROM Books_219;
 
 INSERT INTO Issues_219 VALUES(7001, 101, 1, '10-JAN-11', '');
